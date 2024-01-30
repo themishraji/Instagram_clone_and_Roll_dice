@@ -1,0 +1,33 @@
+<%- include("includes/head.ejs") %>
+<style>
+    img {
+        height:100px;
+        width:100px;
+
+        background-color:brown;
+    }
+</style>
+<link rel="stylesheet" href="/style.css"
+<body>
+    <h2>This page belongs to Instagram @<%= data.name %></h2>
+    <button>Follow</button>
+    <button>Message</button>
+    
+
+    <p>
+        Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;
+        Following: <%= data.following %></p>
+    </p>
+    <hr>
+    <% for(let post of data.posts) { %>
+    <img src="<%= post.image %>" alt="some img">
+    <p>
+        likes : <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp;
+        comments: <%= post.comments %></p>
+    </p>
+
+    <% } %>
+  
+   <%- include("includes/footer.ejs") %>
+</body>
+</html>
